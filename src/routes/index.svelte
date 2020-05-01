@@ -25,6 +25,11 @@
 <p><strong>Voith Hydro GmbH (2016-2017)</strong> Leading scrum meetings, budget estimation, submittals tracking</p>
 <p><strong>Ontario Power Generation (2014-2015)</strong> Project management oversight for a $3 million domestic waterline replacement project</p>
 <h2>Personal Projects</h2>
+<p><strong>Learning Quest [Svelte, Sapper, Firebase, Firestore]</strong></p>
+<ul>
+	<li>Interactive self guided education tool for children</li>
+	<li>Can be accessed through this <a href="https://learning-quest.now.sh/" target="_blank" alt="learning quest">link</a></li>
+</ul>
 <p><strong>Leet Quiz [Flutter, Firebase, Firestore]</strong></p>
 <ul>
 	<li>A mobile quiz game where users answer questions on a variety of topics related to web and mobile development</li>
@@ -43,4 +48,5 @@
 	<li>Competitive habit tracking game built as final project for the Full Stack Web Development bootcamp at NEXT Academy (Full Stack Web Development Bootcamp in Kuala Lumpur, Malaysia)</li>
 	<li>Implemented chronological jobs using RabbitMQ to end active game rounds and start new rounds each week</li>
 	<li>Voted ‘Most Creative App’ by audience at final project showcase</li>
+	<li>Can be accessed through this <a href="http://habitwars.herokuapp.com/" target="_blank" alt="habit wars">link</a></li>
 </ul>
