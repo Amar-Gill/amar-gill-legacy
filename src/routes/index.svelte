@@ -16,6 +16,7 @@
 <p><strong>Python</strong> Flask, Anaconda3, Pytorch, iPython, Jupyter Notebook, Spyder, Kivy</p>
 <p><strong>Mobile Development</strong> Flutter, Dart</p>
 <p><strong>Development Methodologies</strong> Test Driven Development, Mobile Responsiveness, RESTful APIs, Agile, RabbitMQ message brokering</p>
+<p><strong>Blockchain</strong> Solidity smart contracts, Truffle Suite, Web3, Metamask</p>
 <p><strong>Databases</strong> PostgreSQL, MongoDB, Cloud Firestore</p>
 <p><strong>Cloud Infrastructure</strong> Heroku, AWS S3, Firebase</p>
 <p><strong>eCommerce</strong> Braintree, SendGrid</p>
