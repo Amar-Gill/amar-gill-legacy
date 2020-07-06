@@ -6,12 +6,11 @@
 
 <style>
 	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
+		background-color: #004c6d;
 		margin: 0 auto;
 		box-sizing: border-box;
+		padding-bottom: 2rem;
+		height: 100%;
 	}
 </style>
 

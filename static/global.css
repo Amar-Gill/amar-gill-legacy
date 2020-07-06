@@ -1,9 +1,19 @@
-body {
-	margin: 0;
+:root {
+	--hue-1: #004c6d;
+	--hue-2: #058cb6;
+	--hue-3: #00d2ff;
+	--compliment-1: #c55699;
+	--compliment-2: #ffa600;
+	color: var(--hue-3);
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
-	color: #333;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
 }
 
 @media (min-width: 400px) {
