@@ -10,6 +10,14 @@
 		padding-left: 10em;
 		padding-right: 10em;
 	}
+
+	a {
+		color: var(--hue-2);
+	}
+
+	a:visited {
+		color: var(--hue-2);
+	}
 </style>
 
 <svelte:head>
@@ -23,7 +31,10 @@
 		<p><strong>Github</strong> <a href="https://github.com/Amar-Gill" alt="Github" target="_blank">Amar-Gill</a></p>
 		<p><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/amar-s-gill-65860662/" alt="LinkedIn"
 				target="_blank">Amar Gill</a></p>
+	</BasicCard>
 
+
+	<BasicCard>
 		<h2>Skills</h2>
 		<p><strong>JavaScript</strong> React, Jest, Node, Express, JQuery, Typescript, Svelte, Sapper</p>
 		<p><strong>Python</strong> Flask, Anaconda3, Pytorch, iPython, Jupyter Notebook, Spyder, Kivy</p>
@@ -35,6 +46,10 @@
 		<p><strong>Databases</strong> PostgreSQL, MongoDB, Cloud Firestore</p>
 		<p><strong>Cloud Infrastructure</strong> Heroku, AWS S3, Firebase</p>
 		<p><strong>eCommerce</strong> Braintree, SendGrid</p>
+	</BasicCard>
+
+	<BasicCard>
+
 
 		<h2>Work History</h2>
 		<p><strong>Morrison Hershfield Ltd. (2017-2019)</strong> Building science consulting and contract administration
@@ -45,6 +60,9 @@
 		</p>
 		<p><strong>Ontario Power Generation (2014-2015)</strong> Project management oversight for a $3 million domestic
 			waterline replacement project</p>
+	</BasicCard>
+
+	<BasicCard>
 		<h2>Personal Projects</h2>
 		<p><strong>Learning Quest [Svelte, Sapper, Firebase, Firestore]</strong></p>
 		<ul>

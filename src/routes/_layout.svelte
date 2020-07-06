@@ -10,7 +10,7 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 		padding-bottom: 2rem;
-		height: 100%;
+		min-height: calc(100vh - 3.5rem);
 	}
 </style>
 

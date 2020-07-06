@@ -24,6 +24,14 @@
 		padding-left: 10em;
 		padding-right: 10em;
 	}
+
+	a {
+		color: var(--hue-2);
+	}
+
+	a:visited {
+		color: var(--hue-2);
+	}
 </style>
 
 <script>
