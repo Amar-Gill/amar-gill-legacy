@@ -1,19 +1,47 @@
 <div class="menu-container">
-    <button class="dropdown-btn">Energy
+
+    <button class="dropdown-btn">Power Generation
         <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-container" id="energy-list">
+
+    <div class="dropdown-container" >
+
+        {#each energyProjects as eProject, i}
+            <p on:click="{() => handleClick(eProject)}" >
+                {i + 1}: {eProject.title}
+            </p>
+        {/each}
+
     </div>
+    
     <button class="dropdown-btn">Building Envelope
         <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-container" id="be-list">
+
+    <div class="dropdown-container" >
+
+        {#each beProjects as beProject, i}
+            <p on:click="{() => handleClick(beProject)}" >
+                {i + 1}: {beProject.title}
+            </p>
+        {/each}
+
     </div>
-    <button class="dropdown-btn">Sustainability
+
+    <button class="dropdown-btn">Green Buildings
         <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-container" id="sustainability-list">
+
+    <div class="dropdown-container" >
+
+        {#each sustainabilityProjects as sProject, i}
+            <p on:click="{() => handleClick(sProject)}" >
+                {i + 1}: {sProject.title}
+            </p>
+        {/each}
+
     </div>
+
 </div>
 
 <!-- use tutorial for drawer menu -->
@@ -26,17 +54,17 @@
         position: fixed;
         display: flex;
         flex-direction: column;
-        /* height: 40vh; */
         width: 16rem;
         left: 1%;
-        background-color: whitesmoke;
+        background-color: var(--hue-1);
         border-radius: 9px;
+        box-shadow: .5rem .5rem var(--compliment-1);
+        color: var(--compliment-2);
     }
 
     .dropdown-btn {
         text-decoration: none;
         font-size: 1.5rem;
-        color: #818181;
         display: block;
         border: none;
         background: none;
@@ -45,14 +73,22 @@
         cursor: pointer;
         outline: none;
         margin-bottom: 1rem;
+        color: inherit;
     }
-
 
     .dropdown-container {
         display: none;
-        background-color: whitesmoke;
         border-radius: 9px;
         margin: 0;
+    }
+
+    p {
+        margin: 0 0 .5rem 2rem;
+        cursor: pointer;
+    }
+
+    p:hover{
+        color: var(--compliment-1);
     }
 
     .active {
@@ -68,53 +104,29 @@
 <script>
     export let map;
 
-    import { onMount } from 'svelte';
+    export let beProjects;
+    export let energyProjects;
+    export let sustainabilityProjects;
 
-    // use map.panTo(element.center) to change center value of map object
-    let beProjects = [
-        {
-            title: "Humber NX",
-            center: { lat: 43.728515, lng: -79.607363 }
-        },
-        {
-            title: "Novus",
-            center: { lat: 43.639053, lng: -79.409972 }
-        },
-        {
-            title: "Niagara Falls Entertainment Complex",
-            center: { lat: 43.082821, lng: -79.083895 }
-        }
-    ]
+    import { onMount, createEventDispatcher } from 'svelte';
 
-    let energyProjects = [
-        {
-            title: "Domestic Waterline Replacement",
-            center: { lat: 44, lng: -76 }
-        },
-        {
-            title: "Cheakamus Generator Replacement",
-            center: { lat: 30, lng: -80 }
-        },
-        {
-            title: "Diablo Canyon Generator Replacement",
-            center: { lat: 31, lng: -72 }
-        }
-    ]
+    const dispatch = createEventDispatcher();
 
-    let sustainabilityProjects = [
-        {
-            title: "lit vibes",
-            center: { lat: 41.1, lng: -80.7 }
-        },
-        {
-            title: "chill vibes",
-            center: { lat: 39.9, lng: -80.4 }
-        },
-        {
-            title: "It's wavy",
-            center: { lat: 33.3, lng: -77.7 }
-        }
-    ]
+    function handleClick(project) {
+
+        map.panTo(project.center);
+        map.setZoom(17);
+
+        // add marker
+        let marker = new google.maps.Marker({
+            map,
+            position: project.center
+        })
+
+        dispatch("select", {
+            project: project
+        })
+    }
 
     onMount(() => {
         // CODE FOR BINDING DROPDOWN DRAWER BEHAVIOR TO MENU BUTTONS
@@ -131,104 +143,6 @@
                 }
             });
         }
-
-        // CODE FOR BINDING MAPS FUNCTIONALITY TO LINKS
-        let beList = document.getElementById("be-list");
-
-        beProjects.forEach((element, index) => {
-            let listItem = document.createElement("p");
-
-            listItem.innerText = element.title;
-            listItem.style.margin = "0 0 .5rem 2rem"
-            listItem.style.cursor = "pointer";
-
-            listItem.addEventListener('mouseenter', e => {
-                listItem.style.color = "pink";
-            });
-
-            listItem.addEventListener('mouseleave', e => {
-                listItem.style.color = "black";
-            });
-
-            // add event listener to pan to the projects coordinates when list item is clicked
-            listItem.addEventListener("click", () => {
-                map.panTo(element.center);
-                map.setZoom(17);
-
-                // add marker
-                let marker = new google.maps.Marker({
-                    map,
-                    position: element.center
-                })
-            })
-
-            beList.append(listItem)
-        })
-
-        let energyList = document.getElementById("energy-list");
-
-        energyProjects.forEach((element, index) => {
-            let listItem = document.createElement("p");
-
-            listItem.innerText = element.title;
-            listItem.style.margin = "0 0 .5rem 2rem"
-            listItem.style.cursor = "pointer";
-
-            listItem.addEventListener('mouseenter', e => {
-                listItem.style.color = "pink";
-            });
-
-            listItem.addEventListener('mouseleave', e => {
-                listItem.style.color = "black";
-            });
-
-            // add event listener to pan to the projects coordinates when list item is clicked
-            listItem.addEventListener("click", () => {
-                map.panTo(element.center);
-                map.setZoom(17);
-
-                // add marker
-                let marker = new google.maps.Marker({
-                    map,
-                    position: element.center
-                })
-            })
-
-            energyList.append(listItem)
-        })
-
-        let sustainabilityList = document.getElementById("sustainability-list");
-
-        sustainabilityProjects.forEach((element, index) => {
-            let listItem = document.createElement("p");
-
-            listItem.innerText = element.title;
-            listItem.style.margin = "0 0 .5rem 2rem"
-            listItem.style.cursor = "pointer";
-
-            listItem.addEventListener('mouseenter', e => {
-                listItem.style.color = "pink";
-            });
-
-            listItem.addEventListener('mouseleave', e => {
-                listItem.style.color = "black";
-            });
-
-            // add event listener to pan to the projects coordinates when list item is clicked
-            listItem.addEventListener("click", () => {
-                map.panTo(element.center);
-                map.setZoom(17);
-
-                // add marker
-                let marker = new google.maps.Marker({
-                    map,
-                    position: element.center
-                })
-            })
-
-            sustainabilityList.append(listItem)
-        })
-
     })
 
 </script>

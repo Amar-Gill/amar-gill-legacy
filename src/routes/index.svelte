@@ -21,7 +21,7 @@
 </style>
 
 <svelte:head>
-	<title>Resume</title>
+	<title>Profile</title>
 </svelte:head>
 
 <section>

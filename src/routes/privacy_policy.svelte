@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Privacy Policy</title>
+	<title>Legal</title>
 </svelte:head>
 
 <section>
