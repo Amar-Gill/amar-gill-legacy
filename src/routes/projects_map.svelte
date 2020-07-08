@@ -10,6 +10,7 @@
 <script>
     import mapStyles from '../../static/map-styles'; // optional
     import Menu from '../components/Menu.svelte';
+    import { fly } from 'svelte/transition'
 
     let activeProject;
 
@@ -33,46 +34,64 @@
     }
     let beProjects = [
         {
-            title: "Humber NX",
-            center: { lat: 43.728515, lng: -79.607363 }
+            title: "Humber College Building NX",
+            center: { lat: 43.728515, lng: -79.607363 },
+            role: "Building Envelope Commissioning Agent",
+            description: "Construction field review and in situ component testing of windows for the deep energy retrofit of a three storey administrative building on the Humber College North Campus."
         },
         {
-            title: "Novus",
-            center: { lat: 43.639053, lng: -79.409972 }
+            title: "Novus Toronto Foundation Review",
+            center: { lat: 43.639053, lng: -79.409972 },
+            role: "Field Review Consultant",
+            description: "Third party quality assurance review of waterproofing system of a four storey parking garage shared by two high rise residential towers."
         },
         {
             title: "Niagara Falls Entertainment Complex",
-            center: { lat: 43.082821, lng: -79.083895 }
+            center: { lat: 43.082821, lng: -79.083895 },
+            role: "Building Envelope Consultant",
+            description: "Construction reviews of building envelope assemblies for a brand new performing arts complex. Assemblies reviewed include curtain wall, cladding and roofing."
         }
     ]
 
     let energyProjects = [
         {
             title: "Domestic Waterline Replacement",
-            center: { lat: 44, lng: -76 }
+            center: { lat: 43.870661, lng: -78.724809 },
+            role: "Assistant Project Manager",
+            description: "Project estimation, risk assessment, planning and oversight of the replacement of the domestic waterline for the Darlington Nuclear Generating Station powerhouse."
         },
         {
             title: "Cheakamus Generator Replacement",
-            center: { lat: 30, lng: -80 }
+            center: { lat: 49.933698, lng: -123.290886 },
+            role: "Project Coordinator",
+            description: "Project submittals tracking, labour and materials sourcing, construction planning for the design and installation of new hydroelectric generator at Cheakamus Hydropower Station."
         },
         {
             title: "Diablo Canyon Generator Replacement",
-            center: { lat: 31, lng: -72 }
+            center: { lat: 48.713850, lng: -121.131345 },
+            role: "Project Coordinator",
+            description: "Project submittals tracking for the design and installation of the new hydroelectric generator at Diablo Canyon Hydropower Station."
         }
     ]
 
     let sustainabilityProjects = [
         {
-            title: "lit vibes",
-            center: { lat: 41.1, lng: -80.7 }
+            title: "Magna Hall",
+            center: { lat: 43.954769, lng: -79.520195 },
+            role: "LEED Consultant",
+            description: "Administration of the LEED green building standard for the new Magna Hall building at the Seneca College King Campus."
         },
         {
-            title: "chill vibes",
-            center: { lat: 39.9, lng: -80.4 }
+            title: "700 Bay",
+            center: { lat: 43.658149, lng: -79.385365 },
+            role: "LEED Consultant",
+            description: "Administration of the LEED green building standard for a new high rise residential tower."
         },
         {
-            title: "It's wavy",
-            center: { lat: 33.3, lng: -77.7 }
+            title: "The Livmore",
+            center: { lat: 43.658417, lng: -79.384403 },
+            role: "LEED Consultant",
+            description: "Administration of the LEED green building standard for a new high rise residential tower."
         }
     ]
 
@@ -87,8 +106,15 @@
 {/if}
 
 {#if activeProject}
-<aside  >WAGWAN G?
-    {activeProject.title}
+<aside transition:fly="{{x:200, duration: 800}}">
+    <p><strong>
+        {activeProject.title}
+    </strong>
+    </p>
+    <p><strong>
+        Role:
+    </strong> {activeProject.role}</p>
+    <p><strong>Description:</strong> {activeProject.description}</p>
 </aside>
 {/if}
 
@@ -102,5 +128,21 @@
         position: fixed;
         top: 9%;
         right: 2%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--hue-1);
+        border-radius: 9px;
+        color: var(--compliment-2);
+        box-shadow: .5rem .5rem var(--compliment-1);
+        width: 12rem;
+        padding: 1rem;
+    }
+
+    aside * {
+        margin: 0;
+    }
+
+    aside * + * {
+        margin: .5rem 0 0 0;
     }
 </style>

@@ -4,6 +4,7 @@
 	--hue-3: #00d2ff;
 	--compliment-1: #c55699;
 	--compliment-2: #ffa600;
+	--transition-speed: 600ms;
 	color: var(--hue-3);
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;

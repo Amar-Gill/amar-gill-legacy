@@ -93,7 +93,6 @@
 
     .active {
         background-color: green;
-        color: white;
     }
 
     .fa-caret-down {
