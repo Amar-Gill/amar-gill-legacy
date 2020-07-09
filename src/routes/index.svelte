@@ -82,29 +82,6 @@
 					href="https://play.google.com/store/apps/details?id=dev.amar.quizdemo" alt="play store"
 					target="_blank">Google Play Store</a></li>
 		</ul>
-		<p><strong>Site Reporting App [React, Flask, PostgreSQL, AWS S3]</strong></p>
-		<ul>
-			<li>Actively developing a quality assurance platform for professionals that perform construction site visits
-				inspired by my experience as a consultant</li>
-			<li>User interface built as a single page application in React using SemanticUI CSS library to achieve clean
-				and
-				minimal design</li>
-			<li>Integrated action tracking into reporting workflow for better user experience when conducting site
-				visits
-				for quality assurance purposes</li>
-			<li>Enabled AWS S3 bucket storage for user uploaded images</li>
-		</ul>
-		<p><strong>Habit Wars [Flask, PostgreSQL, AWS S3, RabbitMQ, Heroku]</strong></p>
-		<ul>
-			<li>Competitive habit tracking game built as final project for the Full Stack Web Development bootcamp at
-				NEXT
-				Academy (Full Stack Web Development Bootcamp in Kuala Lumpur, Malaysia)</li>
-			<li>Implemented chronological jobs using RabbitMQ to end active game rounds and start new rounds each week
-			</li>
-			<li>Voted ‘Most Creative App’ by audience at final project showcase</li>
-			<li>Can be accessed through this <a href="http://habitwars.herokuapp.com/" target="_blank"
-					alt="habit wars">link</a></li>
-		</ul>
 	</BasicCard>
 
 </section>

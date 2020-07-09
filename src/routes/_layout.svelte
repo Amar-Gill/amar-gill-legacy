@@ -6,7 +6,7 @@
 
 <style>
 	main {
-		background-color: #004c6d;
+		background-color: var(--hue-1);
 		margin: 0 auto;
 		box-sizing: border-box;
 		padding-bottom: 2rem;

@@ -5,8 +5,6 @@
         </script>
 </svelte:head>
 
-
-
 <script>
     import mapStyles from '../../static/map-styles'; // optional
     import Menu from '../components/Menu.svelte';
@@ -64,13 +62,13 @@
             title: "Cheakamus Generator Replacement",
             center: { lat: 49.933698, lng: -123.290886 },
             role: "Project Coordinator",
-            description: "Project submittals tracking, labour and materials sourcing, construction planning for the design and installation of new hydroelectric generator at Cheakamus Hydropower Station."
+            description: "Project submittals tracking, labour and materials sourcing, construction planning for the design and installation of new hydroelectric generator at Cheakamus Generating Station."
         },
         {
-            title: "Diablo Canyon Generator Replacement",
+            title: "Diablo Dam Generator Replacement",
             center: { lat: 48.713850, lng: -121.131345 },
             role: "Project Coordinator",
-            description: "Project submittals tracking for the design and installation of the new hydroelectric generator at Diablo Canyon Hydropower Station."
+            description: "Project submittals tracking for the design and installation of the new hydroelectric generator at Diablo Dam Hydropower Station."
         }
     ]
 
@@ -106,7 +104,7 @@
 {/if}
 
 {#if activeProject}
-<aside transition:fly="{{x:200, duration: 800}}">
+<aside in:fly="{{x:200, duration: 800}}">
     <p><strong>
         {activeProject.title}
     </strong>

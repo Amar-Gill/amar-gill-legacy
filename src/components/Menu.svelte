@@ -1,17 +1,17 @@
-<div class="menu-container">
+<div
+ in:fly="{{x:-200, duration: 800}}"
+ class="menu-container">
 
     <button class="dropdown-btn">Power Generation
         <i class="fa fa-caret-down"></i>
     </button>
 
     <div class="dropdown-container" >
-
         {#each energyProjects as eProject, i}
-            <p on:click="{() => handleClick(eProject)}" >
+            <p aria-current="{activeProjectTitle === eProject.title ? true : undefined}" on:click="{() => handleClick(eProject)}" >
                 {i + 1}: {eProject.title}
             </p>
         {/each}
-
     </div>
     
     <button class="dropdown-btn">Building Envelope
@@ -19,13 +19,11 @@
     </button>
 
     <div class="dropdown-container" >
-
         {#each beProjects as beProject, i}
-            <p on:click="{() => handleClick(beProject)}" >
+            <p aria-current="{activeProjectTitle === beProject.title ? true : undefined}" on:click="{() => handleClick(beProject)}" >
                 {i + 1}: {beProject.title}
             </p>
         {/each}
-
     </div>
 
     <button class="dropdown-btn">Green Buildings
@@ -33,13 +31,11 @@
     </button>
 
     <div class="dropdown-container" >
-
         {#each sustainabilityProjects as sProject, i}
-            <p on:click="{() => handleClick(sProject)}" >
+            <p aria-current="{activeProjectTitle === sProject.title ? true : undefined}" on:click="{() => handleClick(sProject)}" >
                 {i + 1}: {sProject.title}
             </p>
         {/each}
-
     </div>
 
 </div>
@@ -98,16 +94,27 @@
     .fa-caret-down {
         float: right;
     }
+
+    [aria-current] {
+        color: var(--hue-3);
+        font-weight: 600;
+    }
+
+    [aria-current]:hover {
+        color: var(--hue-3);
+    }
 </style>
 
 <script>
-    export let map;
+    import { fly } from 'svelte/transition';
+    import { onMount, createEventDispatcher } from 'svelte';
 
+    let activeProjectTitle; // used to style currently selected project
+
+    export let map;
     export let beProjects;
     export let energyProjects;
     export let sustainabilityProjects;
-
-    import { onMount, createEventDispatcher } from 'svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -125,6 +132,8 @@
         dispatch("select", {
             project: project
         })
+
+        activeProjectTitle = project.title;
     }
 
     onMount(() => {
