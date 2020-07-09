@@ -110,6 +110,7 @@
     import { onMount, createEventDispatcher } from 'svelte';
 
     let activeProjectTitle; // used to style currently selected project
+    let marker;
 
     export let map;
     export let beProjects;
@@ -124,10 +125,14 @@
         map.setZoom(17);
 
         // add marker
-        let marker = new google.maps.Marker({
-            map,
-            position: project.center
-        })
+        if (!marker) {
+            marker = new google.maps.Marker({
+                map,
+                position: project.center
+            })
+        } else {
+            marker.setPosition(project.center);
+        }
 
         dispatch("select", {
             project: project
