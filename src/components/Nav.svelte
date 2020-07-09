@@ -63,9 +63,9 @@
 <nav>
 	<ul>
 		<li><a aria-current='{segment === undefined ? "page" : undefined}' href='.'>Profile</a></li>
-		<li><a aria-current='{segment === "privacy_policy" ? "page" : undefined}' href='privacy_policy'>Legal
+		<li><a aria-current='{segment === "legal" ? "page" : undefined}' href='legal'>Legal
 				</a></li>
-		<li><a aria-current='{segment === "projects_map" ? "page" : undefined}' href='projects_map'>Interactive Resume</a>
+		<li><a aria-current='{segment === "past_career" ? "page" : undefined}' href='past_career'>Past Career</a>
 		</li>
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
