@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Interactive Resume</title>
+    <title>Map of Past Career Projects</title>
     <script defer async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPglwdDlv5LhkGGQPIDkz2uTBqM35eh0M&callback=initMap">
         </script>
