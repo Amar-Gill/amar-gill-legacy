@@ -2,7 +2,7 @@
 	<title>Legal</title>
 </svelte:head>
 
-<section>
+<PageLayout>
 	<BasicCard>
 		<h2>Personal Privacy Policy for Apps Developed by Amar S. Gill</h2>
 		<p>Applications distributed through publicly available channels may collect email
@@ -15,32 +15,9 @@
 			<li><a href="mailto:amar.s.gill@outlook.com" alt="email">amar.s.gill@outlook.com</a></li>
 		</ul>
 	</BasicCard>
-</section>
-
-<style>
-	section {
-		max-width: 56em;
-		padding-top: 1em;
-		padding-left: 10rem;
-		padding-right: 10rem;
-	}
-
-	@media (max-width: 835px) {
-		section {
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-	}
-
-	a {
-		color: var(--hue-2);
-	}
-
-	a:visited {
-		color: var(--hue-2);
-	}
-</style>
+</PageLayout>
 
 <script>
 	import BasicCard from '../components/BasicCard.svelte'
+	import PageLayout from '../components/PageLayout.svelte'
 </script>
