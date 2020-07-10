@@ -10,7 +10,7 @@
 
 	<PageLayout>
 		<BasicCard>
-			<h2>Amar Singh Gill - Full Stack Developer - Level 93 Zealadin</h2>
+			<h2>Amar Singh Gill - Web Developer - Level 93 Zealadin</h2>
 			<p><strong>Email</strong> <a rel=external href="mailto:amar.s.gill@outlook.com"
 					alt="email">amar.s.gill@outlook.com</a>
 			</p>
@@ -32,12 +32,12 @@
 
 		<BasicCard>
 			<h2>Personal Projects</h2>
-			<p><a href="https://learning-quest.now.sh" target="_blank" alt="learning quest">Learning Quest [Svelte,
-					Sapper,
-					Firebase, Firestore]</a></p>
+			<p>
+				<a href="https://learning-quest.now.sh" target="_blank" alt="learning quest">Learning Quest	</a>
+				<a href="https://github.com/Amar-Gill/learning-quest" target="_blank" alt="learning quest source">[source]</a>
+			</p>
 			<ul>
 				<li>Interactive self guided education tool for children</li>
 			</ul>
 		</BasicCard>
-
 	</PageLayout>
