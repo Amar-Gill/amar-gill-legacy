@@ -143,4 +143,11 @@
     aside * + * {
         margin: .5rem 0 0 0;
     }
+
+    @media (max-width: 451px) {
+        aside {
+            top: 70%;
+            width: 90%;
+        }
+    }
 </style>

@@ -17,8 +17,8 @@ body {
 	min-height: 100vh;
 }
 
-@media (min-width: 400px) {
-	body {
+@media (min-width: 451px) {
+	:root {
 		font-size: 16px;
 	}
 }

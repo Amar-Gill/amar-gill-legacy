@@ -7,8 +7,15 @@
 	section {
 		max-width: 56em;
 		padding-top: 1em;
-		padding-left: 10em;
-		padding-right: 10em;
+		padding-left: 10rem;
+		padding-right: 10rem;
+	}
+
+	@media (max-width: 835px) {
+		section {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
 	}
 
 	a {

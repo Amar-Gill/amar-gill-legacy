@@ -72,6 +72,26 @@
         color: inherit;
     }
 
+    @media (min-width: 451px) and (max-width: 835px) {
+        .dropdown-btn {
+            font-size: 1.25rem;
+        }
+
+        .menu-container {
+            width: 14rem;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .dropdown-btn {
+            font-size: 1rem;
+        }
+
+        .menu-container {
+           width: 12rem;
+        }
+    }
+
     .dropdown-container {
         display: none;
         border-radius: 9px;
