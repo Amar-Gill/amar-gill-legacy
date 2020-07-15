@@ -1,9 +1,9 @@
 <style>
     div {
-        max-width: 56rem;
+        /* max-width: 56rem; */
         padding-top: 1em;
-        padding-left: 10rem;
-        padding-right: 10rem;
+        padding-left: 14rem;
+        padding-right: 14rem;
     }
 
     @media (max-width: 835px) {
@@ -15,6 +15,7 @@
 
     div :global(a) {
         color: var(--hue-3);
+        cursor:pointer;
     }
 
     div :global(a:visited) {
