@@ -28,7 +28,7 @@
 
 <PageLayout>
 	<BasicCard>
-		<h2>Amar Singh Gill - Web Developer - Level 93 Zealadin</h2>
+		<h2>Amar Singh Gill - Web Developer</h2>
 		<p class="horizontal-flex">
 			<a title="Send me an email" rel=external href="mailto:amar.s.gill@outlook.com"
 			alt="email"><i class="fas fa-envelope-square fa-3x"></i></a>
@@ -59,6 +59,7 @@
 		<ul>
 			<li>Interactive self guided education tool for children</li>
 		</ul>
+
 		<p>
 			<a href="https://play.google.com/store/apps/details?id=dev.amar.quizdemo&hl=en" target="_blank" alt="leet quiz">Leet Quiz</a>
 			<a href="https://github.com/Amar-Gill/flutter-quizapp" target="_blank"
@@ -68,5 +69,14 @@
 			<li>Quiz style game about various topics within web and mobile development</li>
 			<li>Available for download in Apple App Store and Google Play Store</li>
 		</ul>
+
+		<p>
+			<a href="https://array-methods.vercel.app" alt="array methods" target="_blank">Array Methods Visualizer</a>
+			<a href="https://github.com/Amar-Gill/array-methods" target="_blank">[source]</a>
+		</p>
+		<ul>
+			<li>Visualization of sorting algorithms used on arrays</li>
+		</ul>
+
 	</BasicCard>
 </PageLayout>
