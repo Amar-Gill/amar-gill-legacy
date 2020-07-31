@@ -40,12 +40,12 @@
 	</BasicCard>
 
 	<BasicCard>
-		<h2>Summary</h2>
-		<p>Web and Mobile Applications Development</p>
-		<p>Current Stack:</p>
+		<h2>Summary of Skills</h2>
 		<ul>
-			<li><strong>Javascript</strong> Svelte, Sapper</li>
-			<li><strong>Google Cloud Platform</strong> Maps JS API, Firebase</li>
+			<li><strong>Front End Development</strong> Svelte, React, BootStrap</li>
+			<li><strong>Back End Development</strong> Flask, NodeJS, Jest, Express, Firebase</li>
+			<li><strong>Databases</strong> MongoDB, Mongoose, PostgreSQL, Firestore</li>
+			<li><strong>Cloud Computing</strong> AWS S3, Google Maps JS API</li>
 		</ul>
 	</BasicCard>
 
