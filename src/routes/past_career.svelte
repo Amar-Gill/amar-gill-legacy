@@ -15,7 +15,7 @@
   <script
     defer
     async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0jTO8ynyAIUFfDSB4G5U8HHKB6SXSns&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPglwdDlv5LhkGGQPIDkz2uTBqM35eh0M&callback=initMap">
 
   </script>
 </svelte:head>
