@@ -1,82 +1,151 @@
 <script>
-	import BasicCard from "../components/BasicCard.svelte";
-	import PageLayout from '../components/PageLayout.svelte';
+  import BasicCard from "../components/BasicCard.svelte";
+  import PageLayout from "../components/PageLayout.svelte";
 </script>
 
-<svelte:head>
-	<title>Profile</title>
-</svelte:head>
-
 <style>
-	.horizontal-flex {
-		display: flex;
-		justify-content:start;
-		flex-wrap: wrap;
-	}
+  .horizontal-flex {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
 
-	.horizontal-flex a {
-		margin-right: 1rem;
-		color: var(--compliment-2);
-	}
+  .horizontal-flex a {
+    margin-right: 1rem;
+    color: var(--compliment-2);
+  }
 
-	.horizontal-flex a:hover {
-		color: var(--hue-3);
-	}
-
+  .horizontal-flex a:hover {
+    color: var(--hue-3);
+  }
 </style>
 
-
+<svelte:head>
+  <title>Profile</title>
+</svelte:head>
 <PageLayout>
-	<BasicCard>
-		<h2>Amar Singh Gill - Web Developer</h2>
-		<p class="horizontal-flex">
-			<a title="Send me an email" rel=external href="mailto:amar.s.gill@outlook.com"
-			alt="email"><i class="fas fa-envelope-square fa-3x"></i></a>
-			<a title="Github profile" href="https://github.com/Amar-Gill" alt="Github" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
-			<a title="LinkedIn profile" href="https://www.linkedin.com/in/amar-s-gill-65860662/" alt="LinkedIn"
-			target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-			<a title="View resume" href="/resume.pdf" target="_blank" alt="resume"><i class="fas fa-file-pdf fa-3x"></i></a>
-		</p>
-	</BasicCard>
+  <BasicCard>
+    <h2>Amar Singh Gill - Web Developer</h2>
+    <p class="horizontal-flex">
+      <a
+        title="Send me an email"
+        rel="external"
+        href="mailto:amar.s.gill@outlook.com"
+        alt="email">
+        <i class="fas fa-envelope-square fa-3x" />
+      </a>
+      <a
+        title="Github profile"
+        href="https://github.com/Amar-Gill"
+        alt="Github"
+        target="_blank">
+        <i class="fab fa-github-square fa-3x" />
+      </a>
+      <a
+        title="LinkedIn profile"
+        href="https://www.linkedin.com/in/amar-s-gill-65860662/"
+        alt="LinkedIn"
+        target="_blank">
+        <i class="fab fa-linkedin fa-3x" />
+      </a>
+      <a title="View resume" href="/resume.pdf" target="_blank" alt="resume">
+        <i class="fas fa-file-pdf fa-3x" />
+      </a>
+    </p>
+  </BasicCard>
 
-	<BasicCard>
-		<h2>Summary of Skills</h2>
-		<ul>
-			<li><strong>Front End Development</strong> Svelte, React, BootStrap</li>
-			<li><strong>Back End Development</strong> Flask, NodeJS, Jest, Express, Firebase</li>
-			<li><strong>Databases</strong> MongoDB, Mongoose, PostgreSQL, Firestore</li>
-			<li><strong>Cloud Computing</strong> AWS S3, Google Maps JS API</li>
-		</ul>
-	</BasicCard>
+  <BasicCard>
+    <h2>Summary of Skills</h2>
+    <ul>
+      <li>
+        <strong>Front End Development</strong>
+        Svelte, React, BootStrap
+      </li>
+      <li>
+        <strong>Back End Development</strong>
+        Flask, NodeJS, Jest, Express, Firebase
+      </li>
+      <li>
+        <strong>Databases</strong>
+        MongoDB, Mongoose, PostgreSQL, Firestore
+      </li>
+      <li>
+        <strong>Cloud Computing</strong>
+        AWS S3, Google Maps JS API
+      </li>
+    </ul>
+  </BasicCard>
 
-	<BasicCard>
-		<h2>Personal Projects</h2>
-		<p>
-			<a href="https://learning-quest.now.sh" target="_blank" alt="learning quest">Learning Quest </a>
-			<a href="https://github.com/Amar-Gill/learning-quest" target="_blank"
-				alt="learning quest source">[source]</a>
-		</p>
-		<ul>
-			<li>Interactive self guided education tool for children</li>
-		</ul>
+  <BasicCard>
+    <h2>Personal Projects</h2>
+    <p>
+      <a
+        href="https://array-methods.vercel.app"
+        alt="array methods"
+        target="_blank">
+        Array Methods Visualizer
+      </a>
+      <a href="https://github.com/Amar-Gill/array-methods" target="_blank">
+        [source]
+      </a>
+    </p>
+    <ul>
+      <li>Visualization of sorting algorithms used on arrays</li>
+    </ul>
 
-		<p>
-			<a href="https://play.google.com/store/apps/details?id=dev.amar.quizdemo&hl=en" target="_blank" alt="leet quiz">Leet Quiz</a>
-			<a href="https://github.com/Amar-Gill/flutter-quizapp" target="_blank"
-				alt="learning quest source">[source]</a>
-		</p>
-		<ul>
-			<li>Quiz style game about various topics within web and mobile development</li>
-			<li>Available for download in Apple App Store and Google Play Store</li>
-		</ul>
+    <p>
+      <a
+        href="https://learning-quest.now.sh"
+        target="_blank"
+        alt="learning quest">
+        Learning Quest
+      </a>
+      <a
+        href="https://github.com/Amar-Gill/learning-quest"
+        target="_blank"
+        alt="learning quest source">
+        [source]
+      </a>
+    </p>
+    <ul>
+      <li>Interactive self guided education tool for children</li>
+    </ul>
+	
+    <p>
+      <a
+        href="https://play.google.com/store/apps/details?id=dev.amar.quizdemo&hl=en"
+        target="_blank"
+        alt="leet quiz">
+        Leet Quiz
+      </a>
+      <a
+        href="https://github.com/Amar-Gill/flutter-quizapp"
+        target="_blank"
+        alt="learning quest source">
+        [source]
+      </a>
+    </p>
+    <ul>
+      <li>
+        Quiz style game about various topics within web and mobile development
+      </li>
+      <li>Available for download in Apple App Store and Google Play Store</li>
+    </ul>
 
-		<p>
-			<a href="https://array-methods.vercel.app" alt="array methods" target="_blank">Array Methods Visualizer</a>
-			<a href="https://github.com/Amar-Gill/array-methods" target="_blank">[source]</a>
-		</p>
-		<ul>
-			<li>Visualization of sorting algorithms used on arrays</li>
-		</ul>
+    <p>
+      <a
+        href="https://etch-a-sketch.amar-gill.vercel.app/"
+        alt="etch a sketch"
+        target="_blank">
+        Etch-a-Sketch
+      </a>
+      <a href="hhttps://github.com/Amar-Gill/etch-a-sketch" target="_blank">
+        [source]
+      </a>
+    </p>
+    <ul>
+      <li>Web based etch-a-sketch drawing tool</li>
+    </ul>
 
-	</BasicCard>
+  </BasicCard>
 </PageLayout>
