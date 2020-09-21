@@ -1,177 +1,181 @@
-<div
- in:fly="{{x:-200, duration: 800}}"
- class="menu-container">
+<script>
+  import { fly } from "svelte/transition";
+  import { onMount, createEventDispatcher } from "svelte";
 
-    <button class="dropdown-btn">Power Generation
-        <i class="fa fa-caret-down"></i>
-    </button>
+  let activeProjectTitle; // used to style currently selected project
+  let marker;
 
-    <div class="dropdown-container" >
-        {#each energyProjects as eProject, i}
-            <p aria-current="{activeProjectTitle === eProject.title ? true : undefined}" on:click="{() => handleClick(eProject)}" >
-                {i + 1}: {eProject.title}
-            </p>
-        {/each}
-    </div>
-    
-    <button class="dropdown-btn">Building Envelope
-        <i class="fa fa-caret-down"></i>
-    </button>
+  export let map;
+  export let beProjects;
+  export let energyProjects;
+  export let sustainabilityProjects;
 
-    <div class="dropdown-container" >
-        {#each beProjects as beProject, i}
-            <p aria-current="{activeProjectTitle === beProject.title ? true : undefined}" on:click="{() => handleClick(beProject)}" >
-                {i + 1}: {beProject.title}
-            </p>
-        {/each}
-    </div>
+  const dispatch = createEventDispatcher();
 
-    <button class="dropdown-btn">Green Buildings
-        <i class="fa fa-caret-down"></i>
-    </button>
+  function handleClickDetails(e) {
+    const details = document.querySelectorAll("details");
 
-    <div class="dropdown-container" >
-        {#each sustainabilityProjects as sProject, i}
-            <p aria-current="{activeProjectTitle === sProject.title ? true : undefined}" on:click="{() => handleClick(sProject)}" >
-                {i + 1}: {sProject.title}
-            </p>
-        {/each}
-    </div>
+    for (const detail of details) {
+      if (detail !== e.target.parentNode) {
+        detail.removeAttribute("open");
+      }
+    }
+  }
 
-</div>
+  function handleClick(project) {
+    map.panTo(project.center);
+    map.setZoom(17);
 
-<!-- use tutorial for drawer menu -->
-<!-- https://www.w3schools.com/howto/howto_js_dropdown_sidenav.asp -->
+    // add marker
+    if (!marker) {
+      marker = new google.maps.Marker({
+        map,
+        position: project.center,
+      });
+    } else {
+      marker.setPosition(project.center);
+    }
+
+    dispatch("select", {
+      project: project,
+    });
+
+    // set active project to the clicked project to activate highlighting
+    activeProjectTitle = project.title;
+  }
+
+  onMount(() => {});
+</script>
 
 <style>
-    .menu-container {
-        z-index: 2;
-        top: 9%;
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        width: 16rem;
-        left: 1%;
-        background-color: var(--hue-1);
-        border-radius: 9px;
-        box-shadow: .5rem .5rem var(--compliment-1);
-        color: var(--compliment-2);
+  @import url("https://fonts.googleapis.com/css?family=Karla|Space+Mono");
+
+  div {
+    z-index: 2;
+    top: 9%;
+    position: fixed;
+    width: 21rem;
+    left: 1%;
+    background-color: var(--hue-1);
+    border-radius: 9px;
+    box-shadow: 0.5rem 0.5rem var(--compliment-1);
+    color: var(--compliment-2);
+    font-family: "Space Mono", monospace;
+  }
+
+  details {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  summary {
+    cursor: pointer;
+    font-size: 1.5rem;
+    list-style-type: none;
+    /* border-bottom: 2px solid; */
+  }
+
+  section {
+    overflow: auto;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid;
+  }
+
+  :global(details[open] > section) {
+    animation-name: slideDown;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  @media (min-width: 451px) and (max-width: 835px) {
+    summary {
+      font-size: 1.25rem;
     }
 
-    .dropdown-btn {
-        text-decoration: none;
-        font-size: 1.5rem;
-        display: block;
-        border: none;
-        background: none;
-        width: 100%;
-        text-align: left;
-        cursor: pointer;
-        outline: none;
-        margin-bottom: 1rem;
-        color: inherit;
+    div {
+      width: 14rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    summary {
+      font-size: 1rem;
     }
 
-    @media (min-width: 451px) and (max-width: 835px) {
-        .dropdown-btn {
-            font-size: 1.25rem;
-        }
-
-        .menu-container {
-            width: 14rem;
-        }
+    div {
+      width: 12rem;
     }
+  }
 
-    @media (max-width: 450px) {
-        .dropdown-btn {
-            font-size: 1rem;
-        }
+  p {
+    /* margin: 0 0 0.5rem 2rem; */
+    cursor: pointer;
+  }
 
-        .menu-container {
-           width: 12rem;
-        }
+  p:hover {
+    color: var(--compliment-1);
+  }
+
+  [aria-current] {
+    color: var(--hue-3);
+    font-weight: 600;
+  }
+
+  [aria-current]:hover {
+    color: var(--hue-3);
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
     }
-
-    .dropdown-container {
-        display: none;
-        border-radius: 9px;
-        margin: 0;
+    to {
+      opacity: 1;
+      max-height: 20vh;
     }
-
-    p {
-        margin: 0 0 .5rem 2rem;
-        cursor: pointer;
-    }
-
-    p:hover{
-        color: var(--compliment-1);
-    }
-
-    .fa-caret-down {
-        float: right;
-    }
-
-    [aria-current] {
-        color: var(--hue-3);
-        font-weight: 600;
-    }
-
-    [aria-current]:hover {
-        color: var(--hue-3);
-    }
+  }
 </style>
 
-<script>
-    import { fly } from 'svelte/transition';
-    import { onMount, createEventDispatcher } from 'svelte';
+<div in:fly={{ x: -200, duration: 800 }} class="menu-container">
+  <details>
+    <summary on:click={(e) => handleClickDetails(e)}>Power Generation</summary>
+    <section>
+      {#each energyProjects as eProject, i}
+        <p
+          aria-current={activeProjectTitle === eProject.title ? true : undefined}
+          on:click={() => handleClick(eProject)}>
+          {i + 1}: {eProject.title}
+        </p>
+      {/each}
+    </section>
+  </details>
 
-    let activeProjectTitle; // used to style currently selected project
-    let marker;
+  <details>
+    <summary on:click={(e) => handleClickDetails(e)}>Building Envelope</summary>
+    <section>
+      {#each beProjects as beProject, i}
+        <p
+          aria-current={activeProjectTitle === beProject.title ? true : undefined}
+          on:click={() => handleClick(beProject)}>
+          {i + 1}: {beProject.title}
+        </p>
+      {/each}
+    </section>
+  </details>
 
-    export let map;
-    export let beProjects;
-    export let energyProjects;
-    export let sustainabilityProjects;
-
-    const dispatch = createEventDispatcher();
-
-    function handleClick(project) {
-
-        map.panTo(project.center);
-        map.setZoom(17);
-
-        // add marker
-        if (!marker) {
-            marker = new google.maps.Marker({
-                map,
-                position: project.center
-            })
-        } else {
-            marker.setPosition(project.center);
-        }
-
-        dispatch("select", {
-            project: project
-        })
-
-        activeProjectTitle = project.title;
-    }
-
-    onMount(() => {
-        // CODE FOR BINDING DROPDOWN DRAWER BEHAVIOR TO MENU BUTTONS
-        let dropdown = document.getElementsByClassName("dropdown-btn");
-
-        for (let i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function () {
-                // this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    })
-
-</script>
+  <details>
+    <summary on:click={(e) => handleClickDetails(e)}>Green Buildings</summary>
+    <section>
+      {#each sustainabilityProjects as sProject, i}
+        <p
+          aria-current={activeProjectTitle === sProject.title ? true : undefined}
+          on:click={() => handleClick(sProject)}>
+          {i + 1}: {sProject.title}
+        </p>
+      {/each}
+    </section>
+  </details>
+</div>
