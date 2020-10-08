@@ -57,10 +57,7 @@
   <BasicCard>
     <h2>Summary of Skills</h2>
     <ul>
-      <li>
-        <strong>Front End Development</strong>
-        Svelte, React, BootStrap
-      </li>
+      <li><strong>Front End Development</strong> Svelte, React, BootStrap</li>
       <li>
         <strong>Back End Development</strong>
         Flask, NodeJS, Jest, Express, Firebase
@@ -69,29 +66,12 @@
         <strong>Databases</strong>
         MongoDB, Mongoose, PostgreSQL, Firestore
       </li>
-      <li>
-        <strong>Cloud Computing</strong>
-        AWS S3, Google Maps JS API
-      </li>
+      <li><strong>Cloud Computing</strong> AWS S3, Google Maps JS API</li>
     </ul>
   </BasicCard>
 
   <BasicCard>
     <h2>Personal Projects</h2>
-    <p>
-      <a
-        href="https://array-methods.vercel.app"
-        alt="array methods"
-        target="_blank">
-        Array Methods Visualizer
-      </a>
-      <a href="https://github.com/Amar-Gill/array-methods" target="_blank">
-        [source]
-      </a>
-    </p>
-    <ul>
-      <li>Visualization of sorting algorithms used on arrays</li>
-    </ul>
 
     <p>
       <a
@@ -110,7 +90,22 @@
     <ul>
       <li>Interactive self guided education tool for children</li>
     </ul>
-	
+
+    <p>
+      <a
+        href="https://array-methods.vercel.app"
+        alt="array methods"
+        target="_blank">
+        Array Methods Visualizer
+      </a>
+      <a href="https://github.com/Amar-Gill/array-methods" target="_blank">
+        [source]
+      </a>
+    </p>
+    <ul>
+      <li>Visualization of sorting algorithms used on arrays</li>
+    </ul>
+
     <p>
       <a
         href="https://play.google.com/store/apps/details?id=dev.amar.quizdemo&hl=en"
@@ -146,6 +141,5 @@
     <ul>
       <li>Web based etch-a-sketch drawing tool</li>
     </ul>
-
   </BasicCard>
 </PageLayout>
