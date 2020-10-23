@@ -102,7 +102,7 @@
 <style>
   .full-screen {
     width: 100vw;
-    height: calc(100vh - 5.5rem);
+    height: 100vh;
   }
 
   aside {
@@ -111,10 +111,10 @@
     right: 2%;
     display: flex;
     flex-direction: column;
-    background-color: var(--hue-1);
+    background-color: rgba(0,0,0,0.85);
     border-radius: 9px;
-    color: var(--compliment-2);
-    box-shadow: 0.5rem 0.5rem var(--compliment-1);
+    /* color: var(--compliment-2); */
+    /* box-shadow: 0.5rem 0.5rem var(--compliment-1); */
     width: 12rem;
     padding: 1rem;
   }

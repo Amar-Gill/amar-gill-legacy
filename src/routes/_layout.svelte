@@ -1,21 +1,19 @@
 <script>
-	import Nav from '../components/Nav.svelte';
-
-	export let segment;
 </script>
 
 <style>
+	@import url("https://fonts.googleapis.com/css?family=Karla|Space+Mono");
+
+	
 	main {
-		background-color: var(--hue-1);
-		margin: 0 auto;
+		margin: 0 0;
 		box-sizing: border-box;
-		padding-bottom: 2rem;
-		min-height: calc(100vh - 3.5rem);
+		height: 100vh;
+        font-family: "Space Mono", monospace;
 	}
+
 </style>
 
-<Nav {segment}/>
-
 <main>
-	<slot></slot>
+	<slot />
 </main>
