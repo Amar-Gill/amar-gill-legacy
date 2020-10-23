@@ -48,7 +48,6 @@
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Karla|Space+Mono");
 
   div {
     z-index: 2;
@@ -56,11 +55,8 @@
     position: fixed;
     width: 21rem;
     left: 1%;
-    background-color: var(--hue-1);
+    background-color: rgba(0,0,0,0.85);
     border-radius: 9px;
-    box-shadow: 0.5rem 0.5rem var(--compliment-1);
-    color: var(--compliment-2);
-    font-family: "Space Mono", monospace;
   }
 
   details {
@@ -83,7 +79,7 @@
     border-left: 1px solid;
   }
 
-  :global(details[open] > section) {
+  details[open] > section {
     animation-name: slideDown;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
@@ -115,16 +111,16 @@
   }
 
   p:hover {
-    color: var(--compliment-1);
+    color: hotpink;
   }
 
   [aria-current] {
-    color: var(--hue-3);
+    color: aqua;
     font-weight: 600;
   }
 
   [aria-current]:hover {
-    color: var(--hue-3);
+    color: aqua;
   }
 
   @keyframes slideDown {
@@ -140,6 +136,7 @@
 </style>
 
 <div in:fly={{ x: -200, duration: 800 }} class="menu-container">
+  
   <details>
     <summary on:click={(e) => handleClickDetails(e)}>Power Generation</summary>
     <section>
